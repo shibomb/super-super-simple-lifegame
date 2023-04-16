@@ -94,7 +94,7 @@ function updateData() {
       }
 
       // --------------------------------
-      // alive or born or die
+      // save or born or die
       // --------------------------------
       // S23B3
       if (current[y][x] === 1 && (count === 2 || count === 3)) {
