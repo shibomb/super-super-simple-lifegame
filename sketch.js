@@ -2,7 +2,7 @@ const FRAMERATES = [0, 1, 5, 12, 24, 60];
 let frameRateIdx = 2;
 const SIZES = [2, 4, 8, 16, 24, 32, 48, 60];
 let sizeIdx = 2;
-let ONE_SIZE = 8;
+let ONE_SIZE = -1;
 
 const RAND_THRESHOLD_START = 0.5
 const RAND_THRESHOLD_MIN = 0.25
