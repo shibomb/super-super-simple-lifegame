@@ -4,6 +4,10 @@ const SIZES = [2, 4, 8, 16, 24, 32, 48, 60];
 let sizeIdx = 2;
 let ONE_SIZE = 8;
 
+const RAND_THRESHOLD_START = 0.5
+const RAND_THRESHOLD_MIN = 0.25
+const RAND_THRESHOLD_MAX = 0.75
+
 let maxX = 0;
 let maxY = 0;
 const BUFFER = 4;
@@ -15,7 +19,7 @@ function setup() {
   frameRate(FRAMERATES[frameRateIdx]);
   background(0);
 
-  initData(0.5);
+  initData(RAND_THRESHOLD_START);
 }
 
 let isRunning = true;
@@ -26,8 +30,7 @@ function draw() {
     updateData();
   }
 
-  drawData();
-  
+  drawData();  
 }
 
 function drawData() {
@@ -166,7 +169,7 @@ function keyPressed() {
   else if (key === "q") {
     initData(0);
   } else if (key === "r") {
-    initData(random(0.25, 0.75));
+    initData(random(RAND_THRESHOLD_MIN, RAND_THRESHOLD_MAX));
   } else if (key === "f") {
     initData(1);
   } else if (key === "w") {
@@ -182,12 +185,12 @@ function keyPressed() {
   } else if (key === "d") {
     if (sizeIdx < SIZES.length - 1) {
       sizeIdx++;
-      initData(random(0.25, 0.75));
+      initData(random(RAND_THRESHOLD_MIN, RAND_THRESHOLD_MAX));
     }
   } else if (key === "a") {
     if (0 < sizeIdx) {
       sizeIdx--;
-      initData(random(0.25, 0.75));
+      initData(random(RAND_THRESHOLD_MIN, RAND_THRESHOLD_MAX));
     }
   }
 }
